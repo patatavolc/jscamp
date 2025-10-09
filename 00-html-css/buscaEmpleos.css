@@ -123,6 +123,7 @@ header div > a:nth-child(2) {
 main > section:nth-child(1) {
     height: 200px;
     text-align: center;
+    width: 100%;
     
     h1 {
         padding-top:36px;
@@ -131,7 +132,7 @@ main > section:nth-child(1) {
 }
 
 form {
-    max-width: 42rem;
+    max-width: 100rem;
     width: 100%;
     margin: 0 auto;
     padding-inline: 1rem;
@@ -164,6 +165,7 @@ div input[type="text"]::placeholder {
 }
 
 form > div:nth-child(2) {
+    width: 30rem;
     display: flex;
     align-items: flex-start;
     border-radius: 0.5rem;
@@ -184,5 +186,86 @@ div select {
     font-family: inherit;
     margin-right: 10px;
 }
+
+main > section:nth-child(2) {
+    width: 100%;
+    padding: 4rem;
+    
+    h2 {
+        padding-top: 36px;
+    }
+}
+section > footer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+article {
+    border: 2px solid var(--border);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+article > div {
+    padding-left: 20px;
+}
+
+div > h3 {
+    font-weight: 400;
+}
+
+div p:nth-child(2) {
+    color: var(--text-muted);
+}
+
+button[type = "submit"] {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background: var(--hsla-example);
+    color: white;
+    font-weight: 700;
+    border:none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: inherit;
+    font-size: 1rem;
+    white-space: nowrap;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+button[type = "submit"]:hover,
+button[type = "submit"]:focus {
+    background-color: var(--primary);
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+
+
+footer {
+    background-color: var(--background);
+    text-align: center;
+}
+
+footer > a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: 0.5s;
+    font-weight: 500;
+    margin: 10px;
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+
+footer > a:hover , a:focus {
+    background: var(--hsla-example);
+    border: none;
+    border-radius: 0.5rem;
+}
+
 
 
