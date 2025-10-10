@@ -452,6 +452,13 @@ article {
   }
 }
 
-#boton-importante {
-  background: #09f;
+
+.button-apply-job {
+  background-color: #09f;
+
+
+  &.is-applied {
+    background-color: #4caf50;
+    pointer-events: none;
+  }
 }
