@@ -507,13 +507,29 @@ article {
 .puesto-empleo {
   
   color: var(--text-muted);
-  padding: 1.5rem;
-  margin-block: 0.5rem;
-  small {
-    padding-left: 3rem;
-  }
+  padding-left: 3rem;
+  padding-top:3rem ;
+  padding-bottom: 0;
 }
 
 .text-detail {
     color: var(--text-primary);
+}
+
+.job-detail{
+  margin-block: 2rem;
+
+  small {
+    color: var(--text-muted);
+    font-size: large;
+  }
+
+  &.job-listing-class {
+
+  }
+}
+
+#button-apply-job-footer {
+  display: flex;
+  justify-content: flex-end;
 }
