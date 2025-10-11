@@ -462,3 +462,58 @@ article {
     pointer-events: none;
   }
 }
+
+.detail-list ul {
+  list-style: none;
+  padding-left: 1.75rem; /* espacio para el icono */
+  margin-bottom: 0.5rem;
+}
+
+.detail-list ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.detail-list ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2rem; /* ajustar para alinear verticalmente */
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2309f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0' /><path d='M9 12l2 2l4 -4' /></svg>");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; 
+  /* si quieres cambiar el color, sustituye %2309f por otro hex (ej. %23ffffff) */
+}
+
+.job-listing-class {
+  display: flex;
+  justify-content: space-between;
+
+  &.button-apply-job {
+    width: 1rem;
+    height: 1rem;
+
+    &.is-applied {
+      background-color: #4caf50;
+      pointer-events: none;
+    }
+  }
+}
+
+.puesto-empleo {
+  
+  color: var(--text-muted);
+  padding: 1.5rem;
+  margin-block: 0.5rem;
+  small {
+    padding-left: 3rem;
+  }
+}
+
+.text-detail {
+    color: var(--text-primary);
+}
