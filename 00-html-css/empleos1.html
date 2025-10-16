@@ -10,34 +10,43 @@
     <script type="module" src="./script.js"></script>
 </head>
 <body>
+    <!-- Header: logo, navegación y acciones de usuario -->
     <header>
         <h1>
+            <!-- Icono y marca -->
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.25"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
             DevJobs
         </h1>
 
+        <!-- Enlaces principales entre páginas -->
         <nav>
             <a href="index.html">Inicio</a>
             <a href="" >Empleos</a>
         </nav>
 
+        <!-- Acciones de usuario (placeholder) -->
         <div>
             <a href="">Publicar empleo</a>
             <a href="">Iniciar sesion</a>
         </div>
     </header>
     <main>
+        <!-- Sección de búsqueda: título, descripción, formulario y filtros -->
         <section class = "jobs-search">
             <h1>Encuentra tu proximo trabajo</h1>
             <p>Explora miles de oportunidades en el sector tecnologico</p>
 
+            <!-- Formulario de búsqueda: input principal + filtros (no envía a servidor en este ejemplo) -->
             <form role="search">
                 <div class="search-bar">
+                    <!-- Icono de búsqueda -->
                     <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-search"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
 
+                    <!-- Campo de texto para búsquedas por título/empresa/habilidad -->
                     <input required type="text" placeholder="Buscar trabajos, empresas o habilidades">
                 </div>
 
+                <!-- Filtros desplegables: tecnología, ubicación y nivel de experiencia -->
                 <div class="search-filters">
                     <select name="tech" id="filter-tech">
                         <option value="">Tecnologia</option>
@@ -66,8 +75,10 @@
             </form>
 
             <section>
+                <!-- Resultados de búsqueda: lista de ofertas (cada artículo representa una oferta) -->
                 <h1>Resultados de Busqueda</h1>
                 <div class="job-listing">
+                    <!-- Oferta: título, empresa/ubicación y descripción breve + botón aplicar -->
                     <article class="job-listing-class">
                         <div>
                             <h3>Ingeniero de Software</h3>

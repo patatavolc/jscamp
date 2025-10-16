@@ -523,10 +523,6 @@ article {
     color: var(--text-muted);
     font-size: large;
   }
-
-  &.job-listing-class {
-
-  }
 }
 
 #button-apply-job-footer {

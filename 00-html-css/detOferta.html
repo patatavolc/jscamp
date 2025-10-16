@@ -8,17 +8,21 @@
     </head>
 
     <body>
+        <!-- Header: contiene el título del sitio, navegación principal y acciones de usuario -->
         <header>
         <h1>
+            <!-- Icono del logo y nombre de la aplicación -->
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.25"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-code"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
             DevJobs
         </h1>
 
+        <!-- Navegación principal: enlaces a páginas clave -->
         <nav>
             <a href="index.html">Inicio</a>
             <a href="empleos1.html" >Empleos</a>
         </nav>
 
+        <!-- Acciones de usuario: publicar oferta e iniciar sesión (enlaces vacíos por ahora) -->
         <div>
             <a href="">Publicar empleo</a>
             <a href="">Iniciar sesion</a>
@@ -27,18 +31,22 @@
 
     <main>
         
+        <!-- Breadcrumb / contexto: indica la ruta o el area donde se encuentra el usuario -->
         <div class="puesto-empleo">
             <small>Empleos / <strong>Ingeniero de Software</strong></small>
         </div>
         <section class="job-detail">
+            <!-- Resumen del puesto: título, empresa y botón de aplicar -->
             <article class="job-listing-class">
                 <div>
                     <h1>Ingeniero de Software senior</h1>
                         <small>Tech Solutions Inc. - Remoto</small>
                     </div>
+                    <!-- Botón para aplicar: clase usada por JS y CSS -->
                     <button class="button-apply-job" type="submit">Aplicar</button>    
             </article>
             <article class="text-detail">
+                <!-- Descripción amplia del puesto: responsabilidades generales y expectativas -->
                 <h2>Detalles del puesto</h2>
                 <p>Tech Solutions Inc. esta buscando un Ingeniero de Software Senior altamente motivado
                     y experimentado para unirse a nuestro equipo remoto. El candidato ideal tendra una solida formación 
@@ -67,6 +75,7 @@
                 </ul>
             </article>
             <article class="text-detail">
+                <!-- Información sobre la empresa: cultura, beneficios y propuesta de valor -->
                 <h2>Acerca de la empesa</h2>
                 <p>Tech Solutions Inc. es una empresa de tecnologia innovadora que se centra
                     en la creacion de soluciones de software de vanguardia con diversas industrias.
@@ -78,6 +87,7 @@
             </article>
         </section>
     </main>
+    <!-- Footer específico de la página: acción final para aplicar (visible en mobiles/pequeñas pantallas) -->
     <footer id="button-apply-job-footer">
         <button class="button-apply-job" type="submit">Aplicar ahora</button>
     </footer>
