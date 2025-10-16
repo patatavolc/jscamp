@@ -132,3 +132,4 @@ fetch("./data.json") // fetch es asincrono
     });
 
 console.log("despues del fetch");
+// Nota: 1:17:59
