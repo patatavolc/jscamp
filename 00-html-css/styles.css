@@ -529,3 +529,29 @@ article {
   display: flex;
   justify-content: flex-end;
 }
+
+select {
+  padding: 0.625rem 1.25rem;
+  background-color: #242d3a;
+  border: 0;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.2s;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='icon icon-tabler icons-tabler-outline icon-tabler-chevron-down'><path stroke='none' d='M0 0h24v24H0z' fill='none'/><path d='M6 9l6 6l6 -6' /></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  padding-right: 2.5rem;
+
+  &:hover {
+    background-color: var(--primary-hover);
+    color: white;
+  }
+
+  &:focus {
+    outline: 2px solid #1173d4;
+    outline-offset: 2px;
+  }
+}

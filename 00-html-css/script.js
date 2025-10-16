@@ -27,6 +27,35 @@
 
 // Delegación de eventos: escuchar clicks en el contenedor de listados
 // Ventaja: funciona para botones añadidos dinámicamente y reduce listeners individuales
+
+
+
+// Ejemplo de otros eventos
+// const searchInput = document.querySelector('#empleos-search-input');
+
+// searchInput.addEventListener('input', function() {
+//     console.log(searchInput.value);
+// });
+
+// searchInput.addEventListener('blur', function() {
+//     console.log('Se dispara cuando el campo pierde el foco ');
+// });
+
+// const searchForm = document.querySelector('#empleos-search-form');
+
+// searchForm.addEventListener('submit', function(event) {
+//     event.preventDefault(); // Evita el envío del formulario y recarga de página
+
+//     // ... todo lo que yo quiera agregar aqui
+
+//     console.log('submit');
+// });
+
+// document.addEventListener('keydown', function(event) {
+//     console.log('Tecla presionada: ', event.key);
+//     console.log('esta pulsada la tecla shift? ', event.shiftKey);
+// });
+
 const jobsListingSection = document.querySelector('.job-listing')
 
 if (jobsListingSection) {
@@ -48,10 +77,30 @@ if (jobsListingSection) {
 }
 
 // Filtro por tecnología: escucha cambios en el select
-const filter = document.querySelector('#filter-tech');
-if (filter) {
-    // Logueo simple para demostración; aquí iría la lógica de filtrado
-    filter.addEventListener('change', function() {
-        console.log(filter.value);
+const filter = document.querySelector('#filter-location');
+const mensaje = document.querySelector('#filter-selected-value');
+const jobs = document.querySelectorAll('.job-listing-class'); // Selecciona todos los empleos
+
+
+filter.addEventListener('change', function() {
+    const selectedValue = filter.value // Cada vez que cambia el filtro obtenemos el valor
+
+    if (selectedValue) {
+        mensaje.textContent = `Has seleccionado: ${selectedValue}`;
+    } else {
+        mensaje.textContent = '';
+    }
+
+    
+    jobs.forEach(job => {
+        // const modalidad = job.dataset.modalidad; // Accedemos al valor del data-attribute
+        const modalidad = job.getAttribute('data-modalidad'); // Alternativa para acceder al data-attribute
+        
+        if(selectedValue === '' || selectedValue === modalidad) {
+            job.style.display = 'flex'; // Mostramos el trabajo
+        } else {
+            job.style.display = 'none'; // Ocultamos el trabajo
+        }
     })
-}
+})
+
