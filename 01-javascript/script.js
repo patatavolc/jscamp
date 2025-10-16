@@ -76,13 +76,16 @@ if (jobsListingSection) {
     // (por ejemplo, la página de detalles usa una estructura diferente)
 }
 
+
+
 // Filtro por tecnología: escucha cambios en el select
 const filter = document.querySelector('#filter-location');
 const mensaje = document.querySelector('#filter-selected-value');
-const jobs = document.querySelectorAll('.job-listing-class'); // Selecciona todos los empleos
 
 
 filter.addEventListener('change', function() {
+    const jobs = document.querySelectorAll('.job-listing-class'); // Selecciona todos los empleos
+
     const selectedValue = filter.value // Cada vez que cambia el filtro obtenemos el valor
 
     if (selectedValue) {
@@ -100,3 +103,32 @@ filter.addEventListener('change', function() {
     })
 })
 
+
+console.log("antes del fetch");
+
+const container = document.querySelector('.job-listing');
+fetch("./data.json") // fetch es asincrono
+    .then((response) => {
+        return response.json();
+    })
+    .then((jobs) => {
+        jobs.forEach(job => {
+            const article = document.createElement('article');
+            article.className = 'job-listing-class';
+
+            article.dataset.modalidad = job.data.modalidad; // data-modalidad
+            article.dataset.nivel = job.data.nivel; // data-nivel
+            article.dataset.technology = job.data.technology; // data-technology
+
+            article.innerHTML = `<div>
+            <h3>${job.titulo}</h3>
+            <small>${job.empresa} | ${job.ubicacion}</small>
+            <p>${job.descripcion}</p>
+            </div>
+            <button type="submit" class="button-apply-job">Aplicar</button>`;
+
+        container.appendChild(article);
+        });
+    });
+
+console.log("despues del fetch");
