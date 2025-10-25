@@ -27,6 +27,10 @@ fetch("./data.json") // fetch es asincrono
         container.appendChild(article);
         });
     });
-
+    // Codigo impertativo
+    /*
+        para cada trabajo, crea un article
+        le asigna la clase ...
+    */
 console.log("despues del fetch");
 

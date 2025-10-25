@@ -393,6 +393,7 @@ article {
 .job-listing {
   border: 1px solid rgba(255, 255, 255, .3);
   border-radius: 1rem;
+  margin: 0 1rem 1.5rem 1rem;
 
   .job-listing-class {
     background: none;
