@@ -1,3 +1,7 @@
+import React from 'react';
+import { JobCard } from './components/jobCard.jsx';
+import Data from './data.json';
+
 function Header() {
   return(
     <header>
@@ -95,8 +99,21 @@ function App() {
 
     <section>
       <h2>Resultados de búsqueda</h2>
-
-      <div className="jobs-listings">
+    
+    {/* Renderizar la lista de trabajos en el componente JobCard */}
+      <div className="job-listing">
+        {Data.map(job => (
+          <JobCard
+            key={job.id}
+            titulo={job.titulo}
+            empresa={job.empresa}
+            ubicacion={job.ubicacion}
+            descripcion={job.descripcion}
+            modalidad={job.data.modalidad}
+            nivel={job.data.nivel}
+            technology={job.data.technology}
+          />
+        ))}
       </div>
 
       <nav className="pagination">
