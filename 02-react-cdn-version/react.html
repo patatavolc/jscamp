@@ -19,10 +19,19 @@
 
     <script type="text/babel">
         function JobCard({data, titulo, empresa, ubicacion, descripcion}) {
+            const [
+                isApplied, 
+                setIsApplied
+            ] = React.useState(false) // Devuelve un array de 2 posiciones, 1 es el valor, 2 es la función para actualizar el valor
+
             function handleClick() {
-                alert(`Has aplicado al trabajo: ${titulo} en ${empresa}`);
+                setIsApplied(!isApplied);
             }
-            // 1:01:00
+
+            const text = isApplied ? "Aplicado" : "Aplicar";
+            const buttonClass = isApplied ? "is-applied" : "";
+            const isAppliedText = isApplied ? 'Si' : 'No';
+
             return(
                 <article className="job-listing-card" 
                 data-modalidad={data?.modalidad}
@@ -30,13 +39,14 @@
                 data-technology={data?.technology}>
                     <div>
                         <h3>{titulo}</h3>
-                        <small>{empresa} - {ubicacion}</small>
+                        <small>{empresa} - {ubicacion} - He aplicado? {isAppliedText}</small>
                         <p>{descripcion}</p>
                     </div>
                     <button type="submit" 
-                    className="button-apply-job"
+                    disabled={isApplied}
+                    className={`button-apply-job ${buttonClass}`}
                     onClick={handleClick}>
-                        Aplicar
+                        {text}
                     </button>
                 </article>
             )
