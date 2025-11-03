@@ -1,11 +1,10 @@
-import { useId } from 'react';
+import { useId, useState } from "react";
 
-export function SearchFormSection({onSearch, onTextFilter}) {
+export function SearchFormSection({ onSearch, onTextFilter }) {
   const idText = useId();
   const idTechnology = useId();
   const idLocation = useId();
   const idExperienceLevel = useId();
-
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,13 +18,15 @@ export function SearchFormSection({onSearch, onTextFilter}) {
     };
 
     onSearch(filters);
-  }
+  };
 
   const handleTextChange = (event) => {
     const text = event.target.value;
     onTextFilter(text);
+  };
 
-  }
+  const [showHint, setShowHint] = useState(false);
+
   return (
     <section className="jobs-search">
       <h1>Encuentra tu próximo trabajo</h1>
@@ -33,23 +34,43 @@ export function SearchFormSection({onSearch, onTextFilter}) {
 
       <form onSubmit={handleSubmit} id="empleos-search-form" role="search">
         <div className="search-bar">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"
-            className="icon icon-tabler icons-tabler-outline icon-tabler-search">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="icon icon-tabler icons-tabler-outline icon-tabler-search"
+          >
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
             <path d="M21 21l-6 -6" />
           </svg>
 
-          
           <input
-            name={idText} id="empleos-search-input"  type="text"
+            name={idText}
+            id="empleos-search-input"
+            type="text"
             placeholder="Buscar trabajos, empresas o habilidades"
             onChange={handleTextChange}
+            onFocus={() => setShowHint(true)}
+            onBlur={() => setShowHint(false)}
           />
 
-          <button type="submit" style={{ position: 'absolute', right: '4px' }}>Buscar</button>
+          <button type="submit" style={{ position: "absolute", right: "4px" }}>
+            Buscar
+          </button>
         </div>
+
+        {showHint && (
+          <small style={{ color: "#666", marginTop: "4px", display: "block" }}>
+            Comienza a escribir para ver sugerencias
+          </small>
+        )}
 
         <div className="search-filters">
           <select name={idTechnology} id="filter-technology">
@@ -91,6 +112,5 @@ export function SearchFormSection({onSearch, onTextFilter}) {
 
       <span id="filter-selected-value"></span>
     </section>
-
-  )
+  );
 }

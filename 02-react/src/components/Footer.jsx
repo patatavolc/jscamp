@@ -1,7 +1,7 @@
 export function Footer() {
-  return(
+  return (
     <footer>
-    <small>&copy; 2025 DevJobs. Todos los derechos reservados.</small>
-  </footer>
-  )
+      <small>&copy; 2025 DevJobs. Todos los derechos reservados.</small>
+    </footer>
+  );
 }
